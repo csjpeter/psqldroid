@@ -8,22 +8,22 @@
 #define ACCEPT_TYPE_ARG2 struct sockaddr *
 
 /* Define to the type of arg 3 of 'accept' */
-#define ACCEPT_TYPE_ARG3 size_t
+#define ACCEPT_TYPE_ARG3 socklen_t
 
 /* Define to the return type of 'accept' */
 #define ACCEPT_TYPE_RETURN int
 
 /* The normal alignment of `double', in bytes. */
-#define ALIGNOF_DOUBLE 4
+#define ALIGNOF_DOUBLE 8
 
 /* The normal alignment of `int', in bytes. */
 #define ALIGNOF_INT 4
 
 /* The normal alignment of `long', in bytes. */
-#define ALIGNOF_LONG 4
+#define ALIGNOF_LONG 8
 
 /* The normal alignment of `long long int', in bytes. */
-#define ALIGNOF_LONG_LONG_INT 4
+/* #undef ALIGNOF_LONG_LONG_INT */
 
 /* The normal alignment of `short', in bytes. */
 #define ALIGNOF_SHORT 2
@@ -64,7 +64,7 @@
 
 /* float8, int8, and related values are passed by value if 'true', by
    reference if 'false' */
-#define FLOAT8PASSBYVAL false
+#define FLOAT8PASSBYVAL true
 
 /* Define to 1 if getpwuid_r() takes a 5th argument. */
 /* #undef GETPWUID_R_5ARG */
@@ -136,7 +136,7 @@
 /* #undef HAVE_EDITLINE_READLINE_H */
 
 /* Define to 1 if you have the `ERR_set_mark' function. */
-#define HAVE_ERR_SET_MARK 1
+/* #undef HAVE_ERR_SET_MARK */
 
 /* Define to 1 if you have the `fcvt' function. */
 #define HAVE_FCVT 1
@@ -164,6 +164,9 @@
 
 /* Define to 1 if your compiler understands __FUNCTION__. */
 /* #undef HAVE_FUNCNAME__FUNCTION */
+
+/* Define to 1 if you have __sync_lock_test_and_set(int *) and friends. */
+#define HAVE_GCC_INT_ATOMICS 1
 
 /* Define to 1 if you have the `getaddrinfo' function. */
 #define HAVE_GETADDRINFO 1
@@ -229,7 +232,7 @@
 /* #undef HAVE_INT_OPTRESET */
 
 /* Define to 1 if you have the global variable 'int timezone'. */
-#define HAVE_INT_TIMEZONE /**/
+#define HAVE_INT_TIMEZONE 
 
 /* Define to 1 if you have support for IPv6. */
 #define HAVE_IPV6 1
@@ -259,13 +262,14 @@
 /* #undef HAVE_KRB5_TICKET_ENC_PART2 */
 
 /* Define to 1 if you have the <langinfo.h> header file. */
-/* #undef HAVE_LANGINFO_H */
+//#define HAVE_LANGINFO_H 1
+#undef HAVE_LANGINFO_H
 
 /* Define to 1 if you have the <ldap.h> header file. */
 /* #undef HAVE_LDAP_H */
 
 /* Define to 1 if you have the `crypto' library (-lcrypto). */
-#define HAVE_LIBCRYPTO 1
+/* #undef HAVE_LIBCRYPTO */
 
 /* Define to 1 if you have the `eay32' library (-leay32). */
 /* #undef HAVE_LIBEAY32 */
@@ -286,7 +290,7 @@
 /* #undef HAVE_LIBREADLINE */
 
 /* Define to 1 if you have the `ssl' library (-lssl). */
-#define HAVE_LIBSSL 1
+/* #undef HAVE_LIBSSL */
 
 /* Define to 1 if you have the `ssleay32' library (-lssleay32). */
 /* #undef HAVE_LIBSSLEAY32 */
@@ -305,13 +309,13 @@
 
 /* Define to 1 if constants of type 'long long int' should have the suffix LL.
    */
-#define HAVE_LL_CONSTANTS 1
+/* #undef HAVE_LL_CONSTANTS */
 
 /* Define to 1 if `long int' works and is 64 bits. */
-/* #undef HAVE_LONG_INT_64 */
+#define HAVE_LONG_INT_64 1
 
 /* Define to 1 if `long long int' works and is 64 bits. */
-#define HAVE_LONG_LONG_INT_64 1
+/* #undef HAVE_LONG_LONG_INT_64 */
 
 /* Define to 1 if you have the `memmove' function. */
 #define HAVE_MEMMOVE 1
@@ -344,7 +348,7 @@
 #define HAVE_POSIX_FADVISE 1
 
 /* Define to 1 if you have the POSIX signal interface. */
-#define HAVE_POSIX_SIGNALS /**/
+#define HAVE_POSIX_SIGNALS 
 
 /* Define to 1 if you have the `pstat' function. */
 /* #undef HAVE_PSTAT */
@@ -513,7 +517,7 @@
 #define HAVE_SYSCONF 1
 
 /* Define to 1 if you have the syslog interface. */
-/* #undef HAVE_SYSLOG */
+#define HAVE_SYSLOG 1
 
 /* Define to 1 if you have the <sys/ipc.h> header file. */
 #define HAVE_SYS_IPC_H 1
@@ -618,14 +622,14 @@
 /* Define to 1 if you have the <winldap.h> header file. */
 /* #undef HAVE_WINLDAP_H */
 
-/* Define to the appropriate snprintf format for 64-bit ints, if any. */
-#define INT64_FORMAT "%lld"
+/* Define to the appropriate snprintf format for 64-bit ints. */
+#define INT64_FORMAT "%ld"
 
 /* Define to build with Kerberos 5 support. (--with-krb5) */
 /* #undef KRB5 */
 
 /* Define as the maximum alignment requirement of any C data type. */
-#define MAXIMUM_ALIGNOF 4
+#define MAXIMUM_ALIGNOF 8
 
 /* Define bytes to use libc memset(). */
 #define MEMSET_LOOP_LIMIT 1024
@@ -637,13 +641,13 @@
 #define PACKAGE_NAME "PostgreSQL"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "PostgreSQL 8.4.1"
+#define PACKAGE_STRING "PostgreSQL 8.4.17"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "postgresql"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "8.4.1"
+#define PACKAGE_VERSION "8.4.17"
 
 /* Define to the name of the default PostgreSQL service principal in Kerberos.
    (--with-krb-srvnam=NAME) */
@@ -653,13 +657,13 @@
 #define PG_MAJORVERSION "8.4"
 
 /* PostgreSQL version as a string */
-#define PG_VERSION "8.4.1"
+#define PG_VERSION "8.4.17"
 
 /* PostgreSQL version as a number */
-#define PG_VERSION_NUM 80401
+#define PG_VERSION_NUM 80417
 
 /* A string containing the version number, platform, and C compiler */
-#define PG_VERSION_STR "PostgreSQL 8.4.1 on i686-pc-linux-gnu, compiled by GCC i686-pc-linux-gnu-gcc (Gentoo 4.3.4 p1.0, pie-10.1.5) 4.3.4, 32-bit"
+#define PG_VERSION_STR "PostgreSQL 8.4.17 on x86_64-unknown-linux-gnu, compiled by GCC gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 64-bit"
 
 /* Define to 1 to allow profiling output to be saved separately for each
    process. */
@@ -686,13 +690,13 @@
 #define SIZEOF_OFF_T 8
 
 /* The size of `size_t', as computed by sizeof. */
-#define SIZEOF_SIZE_T 4
+#define SIZEOF_SIZE_T 8
 
 /* The size of `unsigned long', as computed by sizeof. */
-#define SIZEOF_UNSIGNED_LONG 4
+#define SIZEOF_UNSIGNED_LONG 8
 
 /* The size of `void *', as computed by sizeof. */
-#define SIZEOF_VOID_P 4
+#define SIZEOF_VOID_P 8
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
@@ -703,9 +707,8 @@
 /* Define to 1 if your <sys/time.h> declares `struct tm'. */
 /* #undef TM_IN_SYS_TIME */
 
-/* Define to the appropriate snprintf format for unsigned 64-bit ints, if any.
-   */
-#define UINT64_FORMAT "%llu"
+/* Define to the appropriate snprintf format for unsigned 64-bit ints. */
+#define UINT64_FORMAT "%lu"
 
 /* Define to 1 to build with assertion checks. (--enable-cassert) */
 /* #undef USE_ASSERT_CHECKING */
@@ -719,11 +722,11 @@
 
 /* Define to 1 if you want float8, int8, etc values to be passed by value.
    (--enable-float8-byval) */
-/* #undef USE_FLOAT8_BYVAL */
+#define USE_FLOAT8_BYVAL 1
 
 /* Define to 1 if you want 64-bit integer timestamp and interval support.
    (--enable-integer-datetimes) */
-/* #undef USE_INTEGER_DATETIMES */
+#define USE_INTEGER_DATETIMES 1
 
 /* Define to 1 to build with LDAP support. (--with-ldap) */
 /* #undef USE_LDAP */
@@ -745,7 +748,7 @@
 /* #undef USE_REPL_SNPRINTF */
 
 /* Define to build with (Open)SSL support. (--with-openssl) */
-#define USE_SSL 1
+/* #undef USE_SSL */
 
 /* Define to select SysV-style semaphores. */
 #define USE_SYSV_SEMAPHORES 1
@@ -779,7 +782,7 @@
 #define XLOG_SEG_SIZE (16 * 1024 * 1024)
 
 /* Number of bits in a file offset, on hosts where this is settable. */
-#define _FILE_OFFSET_BITS 64
+/* #undef _FILE_OFFSET_BITS */
 
 /* Define to 1 to make fseeko visible on some hosts (e.g. glibc 2.2). */
 /* #undef _LARGEFILE_SOURCE */
@@ -802,5 +805,3 @@
 /* Define to empty if the keyword `volatile' does not work. Warning: valid
    code using `volatile' can become incorrect without. Disable with care. */
 /* #undef volatile */
-
-#define OPENSSL_NO_ENGINE

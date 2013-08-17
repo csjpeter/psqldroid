@@ -10,7 +10,7 @@ LOCAL_MODULE:= libpgport
 #LOCAL_REQUIRED_MODULES:= libssl libcrypto
 #LOCAL_SHARED_LIBRARIES+= libssl libcrypto
 
-LOCAL_ARM_MODE:= ARM
+LOCAL_ARM_MODE:= arm
 
 LOCAL_SRC_FILES:= $(SRC_FILES)
 

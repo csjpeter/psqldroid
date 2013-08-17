@@ -1,6 +1,8 @@
 LOCAL_PATH:= $(call my-dir)
 
-SRC_FILES:= chklocale.c copydir.c \
+#SRC_FILES:= chklocale.c copydir.c
+
+SRC_FILES:= chklocale.c \
 	dirmod.c exec.c \
 	noblock.c path.c pgsleep.c pgstrcasecmp.c \
 	qsort.c qsort_arg.c \

@@ -32,6 +32,7 @@ What I did:
 	run create-symbolic-links.sh and then removed it
 		bash create-symbolic-links.sh && rm create-symbolic-links.sh
 	and added new files created so far
+			git add -f .
 			(some were ignored by gitignores I guess because those
 			were to be generated in some way)
 	made a git commit, so the rest can be tracked in git log
