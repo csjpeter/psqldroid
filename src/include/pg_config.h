@@ -262,7 +262,7 @@
 /* #undef HAVE_KRB5_TICKET_ENC_PART2 */
 
 /* Define to 1 if you have the <langinfo.h> header file. */
-#define HAVE_LANGINFO_H 1
+/* #undef HAVE_LANGINFO_H */
 
 /* Define to 1 if you have the <ldap.h> header file. */
 /* #undef HAVE_LDAP_H */
@@ -748,6 +748,7 @@
 
 /* Define to build with (Open)SSL support. (--with-openssl) */
 #define USE_SSL 1
+#define OPENSSL_NO_ENGINE
 
 /* Define to select SysV-style semaphores. */
 #define USE_SYSV_SEMAPHORES 1
