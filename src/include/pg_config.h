@@ -136,7 +136,7 @@
 /* #undef HAVE_EDITLINE_READLINE_H */
 
 /* Define to 1 if you have the `ERR_set_mark' function. */
-/* #undef HAVE_ERR_SET_MARK */
+#define HAVE_ERR_SET_MARK 1
 
 /* Define to 1 if you have the `fcvt' function. */
 #define HAVE_FCVT 1
@@ -262,14 +262,13 @@
 /* #undef HAVE_KRB5_TICKET_ENC_PART2 */
 
 /* Define to 1 if you have the <langinfo.h> header file. */
-//#define HAVE_LANGINFO_H 1
-#undef HAVE_LANGINFO_H
+#define HAVE_LANGINFO_H 1
 
 /* Define to 1 if you have the <ldap.h> header file. */
 /* #undef HAVE_LDAP_H */
 
 /* Define to 1 if you have the `crypto' library (-lcrypto). */
-/* #undef HAVE_LIBCRYPTO */
+#define HAVE_LIBCRYPTO 1
 
 /* Define to 1 if you have the `eay32' library (-leay32). */
 /* #undef HAVE_LIBEAY32 */
@@ -290,7 +289,7 @@
 /* #undef HAVE_LIBREADLINE */
 
 /* Define to 1 if you have the `ssl' library (-lssl). */
-/* #undef HAVE_LIBSSL */
+#define HAVE_LIBSSL 1
 
 /* Define to 1 if you have the `ssleay32' library (-lssleay32). */
 /* #undef HAVE_LIBSSLEAY32 */
@@ -748,7 +747,7 @@
 /* #undef USE_REPL_SNPRINTF */
 
 /* Define to build with (Open)SSL support. (--with-openssl) */
-/* #undef USE_SSL */
+#define USE_SSL 1
 
 /* Define to select SysV-style semaphores. */
 #define USE_SYSV_SEMAPHORES 1
