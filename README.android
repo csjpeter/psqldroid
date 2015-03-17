@@ -19,14 +19,14 @@ The original instructions were:
 		This is known to work with the Android Donut release, but probably others as well
 		Once the compilation completes, you will find binaries under target/out/... 
 
-What I did:
+What I (csjpeter@gmail.com) did:
 
 	unpacked the downloaded psqldroid-20100106.patch.gz and renamed the created
 			directoy postgresql to postgresql-droid
 	I checked out postgresql git repository
 			git clone git://git.postgresql.org/git/postgresql.git
 	stepped in and created a branch named psqldroid_8.4
-			git checkout -t -b psqldroid_8.4_2 origin/REL8_4_STABLE
+			git checkout -t -b psqldroid_8.4 origin/REL8_4_STABLE
 	applied the patch by
 		for f in $(find ../postgresql-droid/ | grep "\.diff$"); do patch -p1 < $f; done
 	run create-symbolic-links.sh and then removed it
@@ -43,3 +43,4 @@ Also you will need openssl-android. You should put its git repo next to your pos
 	git clone https://github.com/scottt/openssl-android.git
 	It had last commit id 98ea02b773a647e2fd935bee50fdaa310b7f447d when I was checking it out.
 Now you can try to compile by using 'ndk-build' script from you android NDK directory.
+
